@@ -16,9 +16,12 @@ const isValidSupabaseUrl = (value) => {
   }
 };
 
-const isSupabaseConfigured = isValidSupabaseUrl(supabaseUrl) && !supabaseUrl.includes('your_supabase') && !!supabaseAnonKey && !supabaseAnonKey.includes('your_supabase');
+const isSupabaseConfigured = isValidSupabaseUrl(supabaseUrl)
+  && !supabaseUrl.includes('your_supabase')
+  && !!supabaseAnonKey
+  && !supabaseAnonKey.includes('your_supabase');
 
-const createMockError = () => new Error('Supabase not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to enable auth and data loading.');
+const createMockError = () => new Error('Supabase not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
 
 const createMockQueryBuilder = () => {
   const builder = {
@@ -26,19 +29,18 @@ const createMockQueryBuilder = () => {
     eq: () => builder,
     order: () => builder,
     limit: () => builder,
-    maybeSingle: async () => ({ data: null, error: null }),
     single: async () => ({ data: null, error: null }),
+    maybeSingle: async () => ({ data: null, error: null }),
     insert: () => builder,
     update: () => builder,
     delete: () => builder,
-    upsert: () => builder,
     then: (resolve) => Promise.resolve({ data: null, error: null }).then(resolve)
   };
 
   return builder;
 };
 
-// Create a mock client if env vars are not set so the app stays mounted in deployed previews.
+// Keep app mount stable when env vars are missing in deployed environments.
 const createMockClient = () => ({
   auth: {
     getUser: async () => ({ data: { user: null }, error: null }),
