@@ -1,0 +1,143 @@
+.howitworks-page {
+  min-height: 50vh;
+}
+
+.howitworks-hero {
+  background: linear-gradient(to bottom, rgba(var(--color-primary-rgb, 59, 130, 246), 0.05), transparent);
+  padding: 4rem 0 2rem;
+}
+
+.howitworks-hero__content {
+  text-align: center;
+}
+
+.howitworks-hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.howitworks-hero__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted, #6b7280);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary, #3b82f6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flow-card {
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flow-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.flow-card__number {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background: var(--color-primary, #3b82f6);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.flow-card__title {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text, #111827);
+}
+
+.flow-card__description {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #6b7280);
+  line-height: 1.5;
+}
+
+.after-order-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.after-order-card {
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.after-order-card:hover {
+  border-color: var(--color-primary, #3b82f6);
+}
+
+.after-order-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text, #111827);
+  margin-bottom: 0.5rem;
+}
+
+.after-order-card__description {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #6b7280);
+  line-height: 1.5;
+}
+
+.howitworks-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .flow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .after-order-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .howitworks-hero {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .howitworks-hero__title {
+    font-size: 2rem;
+  }
+
+  .howitworks-hero__subtitle {
+    font-size: 1rem;
+  }
+}

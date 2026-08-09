@@ -1,0 +1,218 @@
+.menu-page {
+  padding: 3rem 0;
+  background-color: var(--color-muted);
+  min-height: calc(100vh - 20rem);
+}
+
+.menu-page__container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 var(--spacing-page);
+}
+
+/* Date Selector */
+.menu-date-selector {
+  background-color: var(--color-background);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-date-selector__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.menu-date-selector__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-primary);
+}
+
+.menu-date-selector__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.menu-date-selector__dates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.75rem;
+}
+
+.menu-date-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem 0.75rem;
+  background-color: var(--color-muted);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.menu-date-btn:hover:not(:disabled) {
+  background-color: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
+.menu-date-btn--active {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-color: var(--color-primary);
+}
+
+.menu-date-btn--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.menu-date-btn__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.menu-date-btn__date {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.menu-date-btn__status {
+  font-size: 0.625rem;
+  color: var(--color-muted-foreground);
+}
+
+/* Menu Content */
+.menu-content {
+  background-color: var(--color-background);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-content__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.menu-content__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.menu-content__count {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  font-weight: 500;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Menu Item Wrapper */
+.menu-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu-add-to-cart-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  font-weight: 600;
+}
+
+.menu-add-to-cart-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.menu-loading {
+  padding: 4rem;
+  text-align: center;
+  color: var(--color-muted-foreground);
+  font-size: 1.125rem;
+}
+
+/* Empty State */
+.menu-empty {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--color-muted);
+  border-radius: var(--radius-lg);
+}
+
+.menu-empty p {
+  font-size: 1rem;
+  color: var(--color-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.menu-empty__hint {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-page {
+    padding: 2rem 0;
+  }
+
+  .menu-date-selector {
+    padding: 1.5rem;
+  }
+
+  .menu-date-selector__dates {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .menu-date-btn {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .menu-date-btn__date {
+    font-size: 1.25rem;
+  }
+
+  .menu-content {
+    padding: 1.5rem;
+  }
+
+  .menu-content__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}

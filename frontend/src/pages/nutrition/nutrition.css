@@ -1,0 +1,268 @@
+.nutrition-page {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+/* Filter Section */
+.nutrition-filter {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: var(--color-background);
+  border-radius: var(--radius-xl);
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.nutrition-filter__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.nutrition-filter__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nutrition-filter__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.nutrition-filter__select {
+  max-width: 20rem;
+}
+
+/* Section Titles */
+.nutrition-section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.nutrition-section-subtitle {
+  font-size: 1rem;
+  color: var(--color-muted-foreground);
+  margin-bottom: 2rem;
+}
+
+/* Grid Layout */
+.nutrition-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 2.5rem;
+}
+
+/* Cards */
+.nutrition-card {
+  background-color: var(--color-background);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.nutrition-card--secondary {
+  background-color: var(--color-muted);
+}
+
+.nutrition-card__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: 1.5rem;
+}
+
+/* Nutrition Targets */
+.nutrition-targets {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nutrition-target {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nutrition-target__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.nutrition-target__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.nutrition-target__value {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  text-align: right;
+}
+
+.nutrition-target__value strong {
+  color: var(--color-foreground);
+  font-weight: 700;
+}
+
+.nutrition-target__percentage {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+  font-weight: 600;
+}
+
+/* Progress Bar */
+.nutrition-progress {
+  height: 0.75rem;
+  background-color: var(--color-muted);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.nutrition-progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #059669 100%);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* Info Sections */
+.nutrition-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nutrition-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nutrition-list li {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.nutrition-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Micronutrients */
+.nutrition-micronutrients {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.nutrition-badge {
+  padding: 0.625rem 1rem;
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+/* Disclaimer */
+.nutrition-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.nutrition-disclaimer__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-warning);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.nutrition-disclaimer__content {
+  flex: 1;
+}
+
+.nutrition-disclaimer__content p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.nutrition-disclaimer__content strong {
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nutrition-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nutrition-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .nutrition-filter__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .nutrition-filter__select {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .nutrition-section-title {
+    font-size: 1.5rem;
+  }
+
+  .nutrition-card {
+    padding: 1.5rem;
+  }
+
+  .nutrition-micronutrients {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrition-disclaimer {
+    padding: 1.25rem;
+  }
+}

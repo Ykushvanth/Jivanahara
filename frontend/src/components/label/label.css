@@ -1,0 +1,15 @@
+.label {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--color-foreground);
+  margin-bottom: 0.375rem;
+}
+
+.label:has(+ input:disabled),
+.label:has(+ textarea:disabled),
+.label:has(+ select:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

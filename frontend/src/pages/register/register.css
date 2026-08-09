@@ -1,0 +1,118 @@
+.register-page {
+  background-color: var(--color-cream);
+  padding: 4rem 0;
+}
+
+.register-page__container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 var(--spacing-page);
+}
+
+.register-page__card {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+}
+
+.register-page__icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.register-page__icon-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.register-page__title {
+  margin-top: 1.25rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.register-page__subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+.register-page__form {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.register-page__row {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.register-page__field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.register-page__input,
+.register-page__select {
+  min-height: 2.75rem;
+}
+
+.register-page__select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: inherit;
+}
+
+.register-page__hint {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+}
+
+.register-page__submit {
+  min-height: 3rem;
+}
+
+.register-page__footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+.register-page__link {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.register-page__link:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .register-page__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .register-page {
+    padding: 6rem 0;
+  }
+}
