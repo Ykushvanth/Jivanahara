@@ -1,42 +1,47 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChildProvider } from './contexts/ChildContext.jsx';
-import Home from './pages/home/home.jsx';
-import Login from './pages/login/login.jsx';
-import Register from './pages/register/register.jsx';
-import Profile from './pages/profile/profile.jsx';
-import Menu from './pages/menu/menu.jsx';
-import Cart from './pages/cart/cart.jsx';
-import MealPlans from './pages/mealplans/mealplans.jsx';
-import About from './pages/about/about.jsx';
-import Contact from './pages/contact/contact.jsx';
-import Faq from './pages/faq/faq.jsx';
-import FoodSafety from './pages/foodsafety/foodsafety.jsx';
-import HowItWorks from './pages/howitworks/howitworks.jsx';
-import Nutrition from './pages/nutrition/nutrition.jsx';
-import Partner from './pages/partner/partner.jsx';
-import Schools from './pages/schools/schools.jsx';
+
+// Lazy load all pages for code splitting
+const Home = lazy(() => import('./pages/home/home.jsx'));
+const Login = lazy(() => import('./pages/login/login.jsx'));
+const Register = lazy(() => import('./pages/register/register.jsx'));
+const Profile = lazy(() => import('./pages/profile/profile.jsx'));
+const Menu = lazy(() => import('./pages/menu/menu.jsx'));
+const Cart = lazy(() => import('./pages/cart/cart.jsx'));
+const MealPlans = lazy(() => import('./pages/mealplans/mealplans.jsx'));
+const About = lazy(() => import('./pages/about/about.jsx'));
+const Contact = lazy(() => import('./pages/contact/contact.jsx'));
+const Faq = lazy(() => import('./pages/faq/faq.jsx'));
+const FoodSafety = lazy(() => import('./pages/foodsafety/foodsafety.jsx'));
+const HowItWorks = lazy(() => import('./pages/howitworks/howitworks.jsx'));
+const Nutrition = lazy(() => import('./pages/nutrition/nutrition.jsx'));
+const Partner = lazy(() => import('./pages/partner/partner.jsx'));
+const Schools = lazy(() => import('./pages/schools/schools.jsx'));
 
 function App() {
   return (
     <Router>
       <ChildProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/meal-plans" element={<MealPlans />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/food-safety" element={<FoodSafety />} />
-          <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/nutrition" element={<Nutrition />} />
-          <Route path="/partner" element={<Partner />} />
-          <Route path="/schools" element={<Schools />} />
-        </Routes>
+        <Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', fontSize: '1.125rem', color: 'var(--color-muted-foreground)' }}>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/meal-plans" element={<MealPlans />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/food-safety" element={<FoodSafety />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/nutrition" element={<Nutrition />} />
+            <Route path="/partner" element={<Partner />} />
+            <Route path="/schools" element={<Schools />} />
+          </Routes>
+        </Suspense>
       </ChildProvider>
     </Router>
   );
